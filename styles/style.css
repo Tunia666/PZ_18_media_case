@@ -1,1 +1,71 @@
-*,*::before,*::after{box-sizing:border-box}html,body{height:100%}body{position:relative;min-width:800px;height:inherit;margin:0;overflow:hidden;font-family:Arial,sans-serif;background:#171717;color:#fff}.page__video{position:absolute;inset:0;width:100%;height:100%;/* TODO object-fit/object-position */z-index:-2}body::before{/* TODO overlay */}.page__title{position:relative;z-index:1;margin:0;padding:10vh 8vw;font-size:clamp(52px,8vw,120px);line-height:.9;text-transform:uppercase}.page__mark{color:#d8ff55}.page__title:hover::after{/* TODO tooltip */}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  position: relative;
+  min-height: 100%;
+  min-width: 800px;
+  height: inherit;
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #171717;
+  color: #fff;
+}
+.page__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%; 
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.page__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 10vh 8vw;
+  font-size: clamp(52px, 8vw, 120px);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.page__mark {
+  color: #d8ff55;
+}
+.page__mark::after {
+  content: "✦";
+  position: absolute;
+  font-size: 0.5em;
+  top: -0.2em;
+  right: -0.6em;
+  color: #d8ff55;
+}
+.page__title:hover::after {
+  content: "Основная подсказка:\AПоявляется строго при наведении.\A\AДоп. вариант (короткий текст):\AРаботает адаптивно.";
+  white-space: pre;
+  position: absolute;
+  top: 100%;
+  left: 8vw;
+  padding: 16px;
+  background: #d8ff55;
+  color: #171717;
+  font-size: 16px;
+  text-transform: none;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
