@@ -50,11 +50,6 @@ body::before {
   cursor: pointer;
 }
 
-.page__title::before {
-  content: "*";
-  color: #d8ff55;
-  margin-right: 12px;
-}
 
 .page__title:hover::after {
   content: "Подсказка\AПоявляется при наведении";
